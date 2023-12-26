@@ -32,7 +32,7 @@ class _ProductPageState extends State<ProductPage> {
     Colors.deepPurple,
     Colors.pink
   ];
-  int selectedphoto = 0;    
+  int selectedphoto = 0;
   List<String> images = [
     'assets/product/shoe_thumb_1.png',
     'assets/product/shoe_thumb_3.png',
@@ -141,7 +141,9 @@ class _ProductPageState extends State<ProductPage> {
                           SizedBox(
                             height: 250,
                             width: double.infinity,
-                            child: Image.asset(selectedphotoname),
+                            child: Hero(
+                                tag: data.image,
+                                child: Image.asset(selectedphotoname)),
                           ),
                         ],
                       ),
@@ -361,9 +363,7 @@ class _ProductPageState extends State<ProductPage> {
                                             width: 2)),
                                     child: Container(
                                       decoration: BoxDecoration(
-                                          color: index == selectedcolor
-                                              ? MyColors().mainColor
-                                              : data,
+                                          color: data,
                                           borderRadius:
                                               BorderRadius.circular(40)),
                                       child: index == selectedcolor

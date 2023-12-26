@@ -199,6 +199,7 @@ class _HomePageState extends State<HomePage> {
                 height: MediaQuery.of(context).size.height * 0.4 - 30,
                 width: double.infinity,
                 child: ListView.builder(
+                  physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: ProductList().product.length,
                   itemBuilder: (context, index) {
@@ -279,9 +280,12 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     SizedBox(
                                       height: 200,
-                                      child: Image.asset(
-                                        data.image,
-                                        scale: 0.2,
+                                      child: Hero(
+                                        tag:  data.name,
+                                        child: Image.asset(
+                                          data.image,
+                                          scale: 0.2,
+                                        ),
                                       ),
                                     ),
                                   ],
