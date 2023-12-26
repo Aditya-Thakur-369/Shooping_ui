@@ -142,7 +142,7 @@ class _ProductPageState extends State<ProductPage> {
                             height: 250,
                             width: double.infinity,
                             child: Hero(
-                                tag: data.image,
+                                tag: data.name,
                                 child: Image.asset(selectedphotoname)),
                           ),
                         ],

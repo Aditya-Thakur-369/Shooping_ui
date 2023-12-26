@@ -22,21 +22,25 @@ class _CartPageState extends State<CartPage> {
       child: Scaffold(
         body: Column(
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(top: 8, bottom: 8, left: 15, right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  RotatedBox(
+                  const RotatedBox(
                       quarterTurns: 0,
                       child: Icon(
                         Icons.sort,
                         color: Colors.grey,
                         size: 30,
                       )),
-                  CircleAvatar(
-                    maxRadius: 25,
-                    child: Image(image: AssetImage("assets/product/user.png")),
+                  Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage("assets/product/user.png"))),
                   ),
                 ],
               ),
@@ -124,9 +128,12 @@ class _CartPageState extends State<CartPage> {
                                 SizedBox(
                                   height: 200,
                                   width: 130,
-                                  child: Image.asset(
-                                    data.image,
-                                    scale: 0.2,
+                                  child: Hero(
+                                    tag: data.name,
+                                    child: Image.asset(
+                                      data.image,
+                                      scale: 0.2,
+                                    ),
                                   ),
                                 ),
                                 Padding(

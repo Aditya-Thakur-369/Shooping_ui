@@ -305,7 +305,7 @@ class _HomePageState extends State<HomePage> {
                                       ? tags[0]
                                       : index == 1
                                           ? tags[1]
-                                          : ' ',
+                                          : "",
                                   style: TextStyle(
                                       color: MyColors().mainColor,
                                       fontWeight: FontWeight.w700),
